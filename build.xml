@@ -1,0 +1,49 @@
+<project name='bubblesuml' default='jar'>
+
+   <property name='PRO' value='/pro' />
+   <property name='BUBBLESLIB' value='${PRO}/bubbles/lib' />
+
+   <target name='all'>
+      <ant antfile="build.xml" dir="javasrc" />
+   </target>
+
+   <path id='jdocsrc'>
+      <pathelement location='./javasrc' />
+      <pathelement location='${PRO}/ivy/javasrc' />
+      <pathelement location='${PRO}/bubbles/javasrc' />
+    </path>
+
+   <target name='doc'>
+      <ant antfile='build.xml' dir='javasrc' target='doc' />
+      <zip zipfile='lib/apidoc.zip' basedir='doc' />
+   </target>
+
+   <target name='jar' depends='all'>
+      <jar destfile='bublet.jar'>
+	 <manifest>
+	    <attribute name="Bubbles-start" value="com.baselet.bubbles.BubletFactory" />
+	 </manifest>
+	 <fileset dir='./java' includes='**/*.class' />
+	 <zipgroupfileset includes='*.jar' dir='lib' />
+	 <fileset dir='./resources' />
+      </jar>
+      <copy file='bublet.jar' tofile='${BUBBLESLIB}/bublet/bublet.jar' />
+      <copy file='bublet.jar' tofile='${PRO}/bubbles/dropins/bublet.jar' />
+      <copy file='bublet.jar' tofile='${PRO}/bubbles/dropins.export/bublet.jar' />
+   </target>
+
+</project>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
