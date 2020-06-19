@@ -31,10 +31,6 @@ import javax.swing.filechooser.FileSystemView;
 
 import org.w3c.dom.Element;
 
-import com.baselet.control.Main;
-import com.baselet.diagram.DiagramHandler;
-import com.baselet.gui.CurrentGui;
-
 import edu.brown.cs.bubbles.bass.BassName;
 import edu.brown.cs.bubbles.bass.BassNameBase;
 import edu.brown.cs.bubbles.bass.BassConstants.BassRepository;
