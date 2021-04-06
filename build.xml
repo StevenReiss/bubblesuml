@@ -4,6 +4,7 @@
    <property name='BUBBLESLIB' value='${PRO}/bubbles/lib' />
 
    <target name='all'>
+      <mkdir dir='./java' />
       <ant antfile="build.xml" dir="javasrc" />
    </target>
 
