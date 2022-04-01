@@ -16,8 +16,8 @@ class InteractionManagement {
 
 	@SuppressWarnings("unchecked")
       InteractionManagement(int numLevels) {
-		level = new HashSet[numLevels];
-	 	for (int i = 0; i < numLevels; i++) {
+		level = new Set[numLevels];
+		for (int i = 0; i < numLevels; i++) {
 			level[i] = new HashSet<Interaction>();
 		}
 	}
@@ -39,7 +39,7 @@ class InteractionManagement {
 
 	public Set<Interaction> getInteractionsInLevel(int levelNum) {
 		return level[levelNum - 1];
-	}
+	}								
 
 	public int getNumLevels() {
 		return level.length;
