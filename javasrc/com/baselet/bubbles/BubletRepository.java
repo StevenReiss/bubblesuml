@@ -173,6 +173,13 @@ private class UmlFileLoader implements Runnable {
 }
 
 
+@Override public boolean isEmpty()
+{
+   return uml_files.isEmpty();
+}
+
+
+
 @Override public boolean includesRepository(BassRepository br)
 {
    if (br == this) return true;
