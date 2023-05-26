@@ -146,8 +146,11 @@ private class UmlFileLoader implements Runnable {
 	    if (typ.equals("SOURCE")) {
 	       String dir = IvyXml.getTextElement(pathd,"SOURCE");
 	       File fdir = file_system.createFileObject(dir);
-	       for (File f : fdir.listFiles(new UmlFileFilter())) {
-		  loadUmlFilesFrom(f,pfx);
+	       File [] dirs = file.listFiles(new UmlFileFilter());
+	       if (dirs != null) {
+		  for (File f : dirs) {
+		     loadUmlFilesFrom(f,pfx);
+		   }
 		}
 	     }
 	  }
